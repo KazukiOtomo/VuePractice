@@ -1,29 +1,39 @@
-body{
+body {
     font-size: 16px;
     font-family: Verdana, sans-serif;
-}
-
-.container{
+  }
+  
+  .container {
     width: 300px;
     margin: auto;
-}
-
-#app h1{
+  }
+  
+  #app h1 {
     font-size: 16px;
-    border-bottom: 1px solid #134;
+    border-bottom: 1px solid #856;
     padding: 16px 0;
-}
-
-#app li{
+  }
+  
+  #app li {
     line-height: 1.5;
-}
-
-#app input[type="text"]{
+  }
+  
+  #app input[type="text"] {
     padding: 2px;
-}
-
-.command{
+  }
+  
+  .command {
     font-size: 12px;
     cursor: pointer;
-    color:blue;
-}
+    color: #08c;
+  }
+  
+  #app ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  #app li > span.done {
+    text-decoration: line-through;
+    color: #bbb;
+  }
