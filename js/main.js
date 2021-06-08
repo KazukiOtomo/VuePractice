@@ -1,32 +1,34 @@
 (function () {
-    'use strict'
+    'use strict';
 
-    //two way data binding (to UI)
-
-
-    var vm = new Vue({
+    const vm = new Vue({
         el: '#app',
         data: {
             newItem: '',
-            todos: [{
-                title:'sample',
-                isDone:false
-            }]
+            todos: []
         },
         methods: {
-            addItem: function() {
-                var item = {
-                  title: this.newItem,
-                  isDone: false
+            addItem: function () {
+                const item = {
+                    title: this.newItem,
+                    isDone: false
                 };
                 this.todos.push(item);
                 this.newItem = '';
-              },
+            },
             deleteItem: function (index) {
-                if (confirm("本当に削除してもよろしいですか？")) {
-                    this.todos.splice(index, 1)
+                if (confirm('are you sure?')) {
+                    this.todos.splice(index, 1);
                 }
             }
+        },
+        computed: {
+            remaining: function () {
+                let items = this.todos.filter(function (todo) {
+                    return !todo.isDone;
+                });
+                return items.length;
+            }
         }
-    })
+    });
 })();
