@@ -11,8 +11,9 @@
 
     <div id="app" class="container">
         <h1>
+            <button @click="purge">まとめて削除</button>
             Sample Todos
-            <span class="info">({{ remaining }}/{{ todos.length }})</span>
+            <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
         </h1>
         <ul>
             <li v-for="(todo, index) in todos">
