@@ -10,17 +10,17 @@
         watch: {
             todos: {
                 handler: function () {
-                    localStorage.setItem('todos', JSON.stringify(this.todos))
+                    sessionStorage.setItem('todos', JSON.stringify(this.todos))
                 },
                 deep: true
             }
         },
         mounted: function () {
-            this.todos = JSON.parse(localStorage.getItem('todos'));
+            this.todos = JSON.parse(sessionStorage.getItem('todos'));
         },
         methods: {
             addItem: function () {
-                var item = {
+                let item = {
                     title: this.newItem,
                     isDone: false
                 };
