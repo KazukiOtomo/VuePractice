@@ -1,11 +1,14 @@
 (function () {
     'use strict';
 
-    var vm = new Vue({
+    const vm = new Vue({
         el: '#app',
         data: {
             newItem: '',
-            todos: []
+            todos: [{
+                title: 'sample',
+                isDone: false
+            }]
         },
         watch: {
             todos: {
