@@ -24,11 +24,11 @@
         methods: {
             addItem: function () {
                 let item = {
-                    title: newItem,
+                    title: this.newItem,
                     isDone: false
                 };
-                todos.push(item);
-                newItem = '';
+                this.todos.push(item);
+                this.newItem = '';
             },
             deleteItem: function (index) {
                 if (confirm('本当に削除しますか?')) {
@@ -44,7 +44,7 @@
         },
         computed: {
             remaining: function () {
-                return todos.filter(function (todo) {
+                return this.todos.filter(function (todo) {
                     return !todo.isDone;
                 });
             }
