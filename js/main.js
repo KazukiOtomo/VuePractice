@@ -24,15 +24,15 @@
         methods: {
             addItem: function () {
                 let item = {
-                    title: this.newItem,
+                    title: newItem,
                     isDone: false
                 };
-                this.todos.push(item);
-                this.newItem = '';
+                todos.push(item);
+                newItem = '';
             },
             deleteItem: function (index) {
                 if (confirm('本当に削除しますか?')) {
-                    this.todos.splice(index, 1);
+                    todos.splice(index, 1);
                 }
             },
             purge: function () {
