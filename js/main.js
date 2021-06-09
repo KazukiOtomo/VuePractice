@@ -7,6 +7,17 @@
             newItem: '',
             todos: []
         },
+        watch: {
+            todos: {
+                handler: function () {
+                    localStorage.setItem('todos', JSON.stringify(this.todos))
+                },
+                deep: true
+            }
+        },
+        mounted: function () {
+            this.todos = JSON.parse(localStorage.getItem('todos'));
+        },
         methods: {
             addItem: function () {
                 var item = {
