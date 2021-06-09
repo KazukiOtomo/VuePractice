@@ -44,7 +44,7 @@
         },
         computed: {
             remaining: function () {
-                return this.todos.filter(function (todo) {
+                return todos.filter(function (todo) {
                     return !todo.isDone;
                 });
             }
