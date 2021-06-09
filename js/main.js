@@ -6,15 +6,12 @@
         el: '#app',
         data: {
             newItem: '',
-            todos: [{
-                title: 'sample',
-                isDone: false
-            }]
+            todos: []
         },
         watch: {
             todos: {
                 handler: function () {
-                    localStorage.setItem('todos', JSON.stringify(this.todos))
+                    //localStorage.setItem('todos', JSON.stringify(this.todos))
                     // store.set('todos', this.todos.isDone);
                     // document.cookie = 'todos'
                 },
@@ -22,7 +19,7 @@
             }
         },
         mounted: function () {
-            this.todos = JSON.parse(localStorage.getItem('todos'));
+            //this.todos = JSON.parse(localStorage.getItem('todos'));
             // this.todos = document.cookie.split(';');
         },
         methods: {
