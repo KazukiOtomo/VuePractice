@@ -28,15 +28,15 @@
             <input type="submit" value="Add">
         </form>
 
-        <div id="like">
-            <like-component message="いいね！"></like-component>
-            <like-component message="がんばれ！"></like-component>
-            <like-component message="お疲れ！"></like-component>
-        </div>
-
     </div>
 
-
+    <div id="like">
+        <p>リアクションの数: {{ total }}</p>
+        <like-component message="いいね！" @increment="incrementTotal"></like-component>
+        <like-component message="がんばれ！" @increment="incrementTotal"></like-component>
+        <like-component message="お疲れ！" @increment="incrementTotal"></like-component>
+    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/main.js"></script>
