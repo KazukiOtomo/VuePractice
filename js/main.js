@@ -58,7 +58,13 @@
                 count: 0
             }
         },
-        template: '<button @click="countUp">いいね！{{count}}</button>',
+        props: {
+            message: {
+                type: String,
+                default: 'いいね！'
+            }
+        },
+        template: '<button @click="countUp">{{message}}{{count}}</button>',
         methods: {
             countUp: function () {
                 this.count++;
@@ -71,7 +77,7 @@
         components: {
             'like-component': likeComponent
         },
-        
+
     });
 
 })();
