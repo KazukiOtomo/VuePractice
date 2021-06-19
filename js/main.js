@@ -10,15 +10,15 @@
         watch: {
             todos: {
                 handler: function() {
-                    localStorage.setItem('todos', JSON.stringify(this.todos))
-                        // store.set('todos', this.todos.isDone);
-                        // document.cookie = 'todos'
+                    // localStorage.setItem('todos', JSON.stringify(this.todos))
+                    // store.set('todos', this.todos.isDone);
+                    // document.cookie = 'todos'
                 },
                 deep: true
             }
         },
         mounted: function() {
-            this.todos = JSON.parse(localStorage.getItem('todos'));
+            // this.todos = JSON.parse(localStorage.getItem('todos'));
             // this.todos = document.cookie.split(';');
         },
         methods: {
