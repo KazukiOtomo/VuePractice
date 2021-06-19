@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     const vm = new Vue({
@@ -9,20 +9,20 @@
         },
         watch: {
             todos: {
-                handler: function () {
-                    //localStorage.setItem('todos', JSON.stringify(this.todos))
-                    // store.set('todos', this.todos.isDone);
-                    // document.cookie = 'todos'
+                handler: function() {
+                    localStorage.setItem('todos', JSON.stringify(this.todos))
+                        // store.set('todos', this.todos.isDone);
+                        // document.cookie = 'todos'
                 },
                 deep: true
             }
         },
-        mounted: function () {
-            //this.todos = JSON.parse(localStorage.getItem('todos'));
+        mounted: function() {
+            this.todos = JSON.parse(localStorage.getItem('todos'));
             // this.todos = document.cookie.split(';');
         },
         methods: {
-            addItem: function () {
+            addItem: function() {
                 let item = {
                     title: this.newItem,
                     isDone: false
@@ -30,12 +30,12 @@
                 this.todos.push(item);
                 this.newItem = '';
             },
-            deleteItem: function (index) {
+            deleteItem: function(index) {
                 if (confirm('本当に削除しますか?')) {
                     todos.splice(index, 1);
                 }
             },
-            purge: function () {
+            purge: function() {
                 if (!confirm('終了したタスクをまとめて削除しますか?')) {
                     return;
                 }
@@ -43,8 +43,8 @@
             }
         },
         computed: {
-            remaining: function () {
-                return this.todos.filter(function (todo) {
+            remaining: function() {
+                return this.todos.filter(function(todo) {
                     return !todo.isDone;
                 });
             }
@@ -58,15 +58,14 @@
                 default: 'いいね！'
             }
         },
-        data: function () {
+        data: function() {
             return {
                 count: 0
             }
         },
-        template:
-            '<button @click="countUp">{{message}}{{count}}</button>',
+        template: '<button @click="countUp">{{message}}{{count}}</button>',
         methods: {
-            countUp: function () {
+            countUp: function() {
                 this.count++;
                 this.$emit('increment');
             }
@@ -82,7 +81,7 @@
             total: 0
         },
         methods: {
-            incrementTotal: function () {
+            incrementTotal: function() {
                 this.total++;
             }
         }
